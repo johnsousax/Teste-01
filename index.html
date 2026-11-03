@@ -67,11 +67,11 @@ ul,ol{list-style:none}
 .gancho{font:700 clamp(40px,5cqw,76px)/.96 var(--tit);text-wrap:balance}
 .hero-txt p+p{margin-top:14px;max-width:44ch;font-size:clamp(17px,1.4vw,21px);color:var(--gelo)}
 .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.figura-box{position:absolute;z-index:3;right:clamp(10px,9cqw,170px);bottom:0;height:min(90svh,66cqw);aspect-ratio:685/1239;container-type:inline-size}
-.figura{width:100%;height:100%;object-fit:cover;object-position:50% 0;-webkit-mask:linear-gradient(#000 80%,transparent 99%);mask:linear-gradient(#000 80%,transparent 99%)}
-.selo{position:absolute;left:-29%;top:31%;width:47%;aspect-ratio:1;display:grid;place-items:center;transform:rotate(-9deg);color:#000}
+.figura-box{position:absolute;z-index:3;right:clamp(0px,5cqw,110px);bottom:clamp(10px,2svh,24px);height:min(88svh,60cqw);aspect-ratio:761/1372;container-type:inline-size}
+.figura{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 34px rgba(255,255,255,.1))}
+.selo{position:absolute;left:-27%;top:60%;width:36%;aspect-ratio:1;display:grid;place-items:center;transform:rotate(-9deg);color:#000}
 .selo svg{position:absolute;inset:0;width:100%;height:100%;fill:#fff}
-.selo span{position:relative;text-align:center;font:700 7.8cqw/.94 var(--tit)}
+.selo span{position:relative;text-align:center;font:700 6.3cqw/.94 var(--tit)}
 .selo b{display:block;font-size:1.3em;font-weight:700}
 
 /* rota */
@@ -81,22 +81,12 @@ ul,ol{list-style:none}
 
 /* agenda */
 .agenda{padding:clamp(48px,7vw,104px) var(--g);background:#000}
-.falta{margin-top:12px;font-size:clamp(18px,1.6vw,23px);color:var(--nevoa)}
-.falta:empty{display:none}
-.datas{margin-top:clamp(22px,3vw,40px);border-top:1px solid var(--aco)}
-.data{display:grid;grid-template-columns:minmax(150px,3.1fr) 2fr 3fr;gap:8px 24px;align-items:baseline;padding:clamp(14px,1.8vw,22px) 12px;border-bottom:1px solid var(--aco);transition:background .16s,color .16s}
-.data:hover{background:#fff;color:#000}
-.dia{font:700 clamp(54px,8vw,120px)/.9 var(--tit)}
-.hora{font-size:clamp(17px,1.5vw,22px)}
-.casa{font:700 clamp(30px,3.6vw,56px)/1 var(--tit)}
-.casa small{display:block;margin-top:6px;font:400 clamp(16px,1.2vw,18px)/1.3 var(--txt)}
-.vazio{padding:24px 0;font-size:clamp(20px,2vw,28px)}
 .convite{margin-top:clamp(20px,2.6vw,32px);display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between}
 .convite p{max-width:46ch;color:var(--gelo)}
 
 /* pista */
 .pista{position:relative;height:min(100svh,62vw);min-height:520px;overflow:hidden;background:#111}
-.pista img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(1) contrast(1.1)}
+.pista img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .pista::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.86) 100%)}
 .pista .h2{position:absolute;z-index:2;left:var(--g);right:var(--g);bottom:clamp(20px,3.4vw,48px);max-width:16ch;text-shadow:0 2px 24px rgba(0,0,0,.6)}
 @supports (animation-timeline:view()){
@@ -111,18 +101,17 @@ ul,ol{list-style:none}
 .trilha{display:flex;gap:clamp(8px,1vw,14px);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--g);scroll-padding:0 var(--g);scrollbar-width:none}
 .trilha::-webkit-scrollbar{display:none}
 .trilha figure{flex:0 0 min(82vw,44vw + 200px);aspect-ratio:1;scroll-snap-align:start;overflow:hidden;background:#111}
-.trilha img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06);transition:filter .5s}
-.trilha figure.ativa img,.trilha figure:hover img{filter:none}
+.trilha img{width:100%;height:100%;object-fit:cover}
 .setas{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px var(--g) 0;color:var(--nevoa);font-size:16px}
 .setas div{display:flex;gap:8px}
 .seta{width:52px;height:52px;display:grid;place-items:center;background:none;color:#fff;border:1px solid var(--aco);cursor:pointer;font:700 26px/1 var(--tit)}
 .seta:hover{background:#fff;color:#000}
 
 /* quem e */
-.quem{position:relative;overflow:hidden;background:#fff;color:#000;padding:clamp(52px,7vw,110px) var(--g) 0;display:grid;grid-template-columns:6fr 5fr;gap:clamp(24px,4vw,64px);align-items:end;container-type:inline-size}
+.quem{position:relative;overflow:hidden;background:#fff;color:#000;padding:clamp(52px,7vw,110px) var(--g);display:grid;grid-template-columns:6fr 5fr;gap:clamp(24px,4vw,64px);align-items:center;container-type:inline-size}
 .fundo-txt{position:absolute;left:var(--g);top:clamp(24px,3vw,44px);font:400 calc((100cqw - 2*var(--g))/5.56)/1.32 Boldonse,Impact,sans-serif;color:var(--gelo);white-space:nowrap;pointer-events:none}
-.quem>div{position:relative;padding-bottom:clamp(44px,6vw,90px)}
-.quem .sentado{position:relative;width:100%;max-width:560px;justify-self:center;height:auto}
+.quem>div{position:relative}
+.quem .sentado{position:relative;width:100%;height:auto}
 .bio{margin-top:20px;max-width:58ch}
 .bio p+p{margin-top:12px}
 .nums{display:grid;grid-template-columns:repeat(3,auto);gap:16px clamp(20px,3vw,44px);margin-top:28px;justify-content:start}
@@ -183,24 +172,18 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--aco);outline-off
   .hero{min-height:0;background:radial-gradient(120cqw 60% at 50% 42%,#2c2c2c 0,#0c0c0c 60%,#000 100%)}
   .nav ul li:not(:last-child){display:none}
   .mast-nome{transform:scaleY(1.9);transform-origin:50% 0;margin-bottom:1.26em}
-  .figura-box{order:3;position:relative;right:auto;bottom:auto;height:auto;width:min(78cqw,430px);height:calc(min(78cqw,430px)*1.13);min-height:0;aspect-ratio:auto;margin:10px auto 0;overflow:visible}
-  .figura{height:auto;aspect-ratio:685/1239;-webkit-mask:linear-gradient(#000 52%,transparent 64%);mask:linear-gradient(#000 52%,transparent 64%)}
-  .selo{left:-13%;top:50%;width:44%}
+  .figura-box{order:3;position:relative;right:auto;bottom:auto;height:auto;width:min(92cqw,520px);height:auto;min-height:0;aspect-ratio:761/1372;margin:6px auto 12px;overflow:visible}
+  .selo{left:-3%;top:1%;width:32%}
   .hero-txt{order:4;max-width:none;margin-top:-6px;padding-bottom:34px}
   .gancho{font-size:clamp(44px,12.4cqw,72px)}
   .rota{font-size:clamp(23px,7vw,60px);gap:10px}
   .linha svg{width:26px;padding:0 5px}
   .fundo-txt{display:none}
-  .data{grid-template-columns:1fr 1fr;align-items:end;padding-left:0;padding-right:0}
-  .data:hover{background:none;color:inherit}
-  .casa{grid-column:1/-1}
-  .hora{text-align:right}
-  .pista{height:112vw;min-height:0}
+          .pista{height:112vw;min-height:0}
   .pista img{object-position:46% 30%}
   .trilha figure{flex-basis:82vw}
   .quem,.musica-grade,.contrato{grid-template-columns:1fr}
-  .quem .sentado{order:2;max-width:92%}
-  .quem>div{padding-bottom:10px}
+  .quem .sentado{order:-1}
   .nums{grid-template-columns:repeat(3,1fr);gap:12px}
   form{grid-template-columns:1fr}
   .fixa{position:fixed;z-index:20;left:0;right:0;bottom:0;display:block;padding:8px var(--g) calc(8px + env(safe-area-inset-bottom));background:#000;border-top:1px solid var(--aco);transition:transform .2s}
@@ -219,7 +202,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--aco);outline-off
   @keyframes sobe{from{opacity:0;transform:translateY(7%)}to{opacity:1;transform:none}}
   @keyframes carimbo{from{opacity:0;transform:rotate(-9deg) scale(1.7)}to{opacity:1;transform:rotate(-9deg)}}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.fixa,.data,.trilha img{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.fixa{transition:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -229,7 +212,6 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--aco);outline-off
   <nav class="nav" aria-label="Principal">
     <a class="marca" href="#topo">DJ Jamaica</a>
     <ul>
-      <li><a href="#agenda">Agenda</a></li>
       <li><a href="#ao-vivo">Ao vivo</a></li>
       <li><a href="#quem">Quem é</a></li>
       <li><a href="#musica">Música</a></li>
@@ -249,7 +231,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--aco);outline-off
     </div>
   </div>
   <div class="figura-box">
-    <img class="figura" src="assets/hero.webp" width="685" height="1239" alt="DJ Jamaica sorrindo, sentado, de chapéu preto, moletom preto e calça branca" fetchpriority="high">
+    <img class="figura" src="assets/hero.webp" width="761" height="1372" alt="DJ Jamaica sentado, sorrindo e fazendo joinha, de camiseta branca, calça preta e tênis preto e branco" fetchpriority="high">
     <p class="selo"><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="100.0,50.0 93.6,56.3 98.0,64.1 90.0,68.3 92.1,77.0 83.3,78.8 82.7,87.8 73.8,87.0 70.8,95.5 62.4,92.2 57.1,99.5 50.0,94.0 42.9,99.5 37.6,92.2 29.2,95.5 26.2,87.0 17.3,87.8 16.7,78.8 7.9,77.0 10.0,68.3 2.0,64.1 6.4,56.3 0.0,50.0 6.4,43.7 2.0,35.9 10.0,31.7 7.9,23.0 16.7,21.2 17.3,12.2 26.2,13.0 29.2,4.5 37.6,7.8 42.9,0.5 50.0,6.0 57.1,0.5 62.4,7.8 70.8,4.5 73.8,13.0 82.7,12.2 83.3,21.2 92.1,23.0 90.0,31.7 98.0,35.9 93.6,43.7"/></svg><span>Agora em<b>São Luís</b>Maranhão</span></p>
   </div>
 </header>
@@ -262,23 +244,9 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--aco);outline-off
 
 <main>
 <section class="agenda" id="agenda">
-  <h2 class="h2">Próximas datas em São Luís</h2>
-  <p class="falta" id="falta"></p>
-  <ol class="datas" id="datas">
-    <li class="data" data-dia="2026-11-05" data-hora="20">
-      <span class="dia">05 nov</span>
-      <span class="hora">Quinta, 20h</span>
-      <span class="casa">Casa da Sogra</span>
-    </li>
-    <li class="data" data-dia="2026-11-06" data-hora="22">
-      <span class="dia">06 nov</span>
-      <span class="hora">Sexta, 22h</span>
-      <span class="casa">Chácara da DZ7<small>Pela primeira vez</small></span>
-    </li>
-  </ol>
-  <p class="vazio" id="vazio" hidden>A agenda de São Luís e do Maranhão está aberta. Reserve a sua data.</p>
+  <h2 class="h2">Agenda aberta em São Luís e no Maranhão</h2>
   <div class="convite">
-    <p>Tem casa, baile ou festa no Maranhão? A próxima linha dessa agenda pode ser a sua.</p>
+    <p>Tem casa, baile ou festa? Reserve a sua data com o DJ da ritmada.</p>
     <a class="btn b1" href="#contratar">Reservar uma data</a>
   </div>
 </section>
@@ -314,7 +282,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--aco);outline-off
       <div><dt>ouvintes mensais no Spotify</dt><dd>+15 mil</dd></div>
     </dl>
   </div>
-  <img class="sentado" loading="lazy" src="assets/sentado.webp" width="1033" height="1386" alt="DJ Jamaica sentado, sorrindo e fazendo joinha, de camiseta branca, calça preta e tênis preto e branco">
+  <img class="sentado" loading="lazy" src="assets/estudio.webp" width="1000" height="1000" alt="DJ Jamaica rindo em estúdio, de chapéu preto, moletom preto e calça branca">
 </section>
 
 <section class="musica" id="musica">
@@ -385,21 +353,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--aco);outline-off
 
 <script>
 (function(){
-  var WHATS='5521986053404', agora=new Date();
-
-  // Agenda: a data some no dia seguinte ao show e o aviso conta quanto falta
-  var linhas=[].slice.call(document.querySelectorAll('#datas [data-dia]')), vivas=[];
-  linhas.forEach(function(l){
-    var fim=new Date(l.dataset.dia+'T12:00:00'); fim.setDate(fim.getDate()+1);
-    if(fim<agora) l.remove(); else vivas.push(l);
-  });
-  if(!vivas.length){document.getElementById('datas').hidden=true;document.getElementById('vazio').hidden=false}
-  else{
-    var d0=new Date(vivas[0].dataset.dia+'T00:00:00'), h0=new Date(agora); h0.setHours(0,0,0,0);
-    var n=Math.round((d0-h0)/864e5), casa=vivas[0].querySelector('.casa').firstChild.textContent.trim();
-    var t=n>1?'Próximo show em '+n+' dias: ':n===1?'Próximo show amanhã: ':n===0?'Hoje tem show: ':'Rolando agora: ';
-    document.getElementById('falta').textContent=t+casa+'.';
-  }
+  var WHATS='5521986053404';
 
   // Luz de palco acompanha o mouse pelo nome
   var hero=document.getElementById('heroBox'), luz=document.getElementById('luz');
