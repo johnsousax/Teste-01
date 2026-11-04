@@ -17,21 +17,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
 <style>
 /* Conceito: tudo corre no ângulo do itálico (10°), como a moto e o quadriciclo das fotos.
-   Paleta tirada da foto das dunas: quadriciclo vermelho, lagoa azul, areia branca, mato verde.
+   Paleta fechada em preto, branco e vermelho.
    Um único detalhe local: a faixa de azulejo de São Luís. */
 :root {
   color-scheme: light;
   --branco: #ffffff;
-  --areia: #eef5fc;
-  --tinta: #0c2444;
-  --tinta-suave: #41577a;
+  --preto: #000000;
   --vermelho: #d9142b;
-  --azul: #0a5bd3;
-  --verde: #0a7d41;
   --fonte: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --calha: clamp(16px, 4vw, 56px);
   --corte: polygon(11.7% 0, 100% 0, 100% 100%, 0 100%);
-  --azulejo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Crect width='72' height='72' fill='%23fff'/%3E%3Cpath d='M0 0h22a22 22 0 0 1-22 22zM72 0v22a22 22 0 0 1-22-22zM72 72H50a22 22 0 0 1 22-22zM0 72V50a22 22 0 0 1 22 22z' fill='%230a5bd3'/%3E%3Cpath d='M36 12l24 24-24 24-24-24z' fill='none' stroke='%230a5bd3' stroke-width='3'/%3E%3Cpath d='M36 23l13 13-13 13-13-13z' fill='%23d9142b'/%3E%3Ccircle cx='36' cy='36' r='4' fill='%23fff'/%3E%3Ccircle cx='36' cy='5' r='3.5' fill='%230a7d41'/%3E%3Ccircle cx='36' cy='67' r='3.5' fill='%230a7d41'/%3E%3Ccircle cx='5' cy='36' r='3.5' fill='%230a7d41'/%3E%3Ccircle cx='67' cy='36' r='3.5' fill='%230a7d41'/%3E%3C/svg%3E");
+  --azulejo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Crect width='72' height='72' fill='%23fff'/%3E%3Cpath d='M0 0h22a22 22 0 0 1-22 22zM72 0v22a22 22 0 0 1-22-22zM72 72H50a22 22 0 0 1 22-22zM0 72V50a22 22 0 0 1 22 22z' fill='%23000'/%3E%3Cpath d='M36 12l24 24-24 24-24-24z' fill='none' stroke='%23000' stroke-width='3'/%3E%3Cpath d='M36 23l13 13-13 13-13-13z' fill='%23d9142b'/%3E%3Ccircle cx='36' cy='36' r='4' fill='%23fff'/%3E%3Ccircle cx='36' cy='5' r='3.5' fill='%23d9142b'/%3E%3Ccircle cx='36' cy='67' r='3.5' fill='%23d9142b'/%3E%3Ccircle cx='5' cy='36' r='3.5' fill='%23d9142b'/%3E%3Ccircle cx='67' cy='36' r='3.5' fill='%23d9142b'/%3E%3C/svg%3E");
 }
 
 * { box-sizing: border-box; }
@@ -39,7 +35,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--branco);
-  color: var(--tinta);
+  color: var(--preto);
   font: 400 1.0625rem/1.6 var(--fonte);
   overflow-x: clip;
 }
@@ -55,7 +51,7 @@ img { display: block; width: 100%; height: auto; }
 a { color: inherit; }
 h1, h2, p, ul, dl, dd, figure { margin: 0; padding: 0; }
 ul { list-style: none; }
-:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--vermelho); outline-offset: 3px; }
 section[id] { scroll-margin-top: 84px; }
 
 .calha {
@@ -91,8 +87,8 @@ section[id] { scroll-margin-top: 84px; }
 }
 .btn > span { display: inline-block; transform: skewX(10deg); }
 .btn:hover { transform: skewX(-10deg) translateX(6px); }
-.btn-azul { --fundo-btn: var(--azul); }
-.btn-branco { --fundo-btn: var(--branco); --cor-btn: var(--tinta); }
+.btn-preto { --fundo-btn: var(--preto); }
+.btn-branco { --fundo-btn: var(--branco); --cor-btn: var(--preto); }
 
 /* Topo */
 .topo {
@@ -123,8 +119,8 @@ section[id] { scroll-margin-top: 84px; }
 .marca i { display: inline-flex; gap: 3px; transform: skewX(-10deg); }
 .marca i b { display: block; width: 5px; height: 20px; }
 .marca i b:nth-child(1) { background: var(--vermelho); }
-.marca i b:nth-child(2) { background: var(--azul); }
-.marca i b:nth-child(3) { background: var(--verde); }
+.marca i b:nth-child(2) { background: var(--preto); }
+.marca i b:nth-child(3) { background: var(--vermelho); }
 .topo nav { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2rem); }
 .topo nav a:not(.btn) {
   font-weight: 600;
@@ -149,7 +145,7 @@ section[id] { scroll-margin-top: 84px; }
 }
 .palavra-in { display: inline-block; padding-right: .06em; }
 .palavra span span { display: inline-block; animation: entra .7s cubic-bezier(.16, 1, .3, 1) backwards; }
-.palavra .mc { color: var(--azul); }
+.palavra .mc { color: var(--preto); }
 .palavra .nome { color: var(--vermelho); animation-delay: .08s; }
 @keyframes entra {
   from { transform: translateX(-9vw) skewX(-10deg); }
@@ -169,7 +165,7 @@ section[id] { scroll-margin-top: 84px; }
   min-width: 0;
 }
 .lema { font-size: clamp(2.6rem, 5.6vw, 5.5rem); }
-.hero-texto p:not(.lema) { max-width: 30ch; color: var(--tinta-suave); font-size: 1.15rem; line-height: 1.45; }
+.hero-texto p:not(.lema) { max-width: 30ch; color: var(--preto); font-size: 1.15rem; line-height: 1.45; }
 .acoes { display: flex; flex-wrap: wrap; gap: .75rem 1rem; padding-top: .5rem; }
 .hero-foto {
   position: relative;
@@ -187,9 +183,9 @@ section[id] { scroll-margin-top: 84px; }
   clip-path: var(--corte);
 }
 .hero-foto .tira { transform: translateX(calc(var(--n) * -14px)); }
-.tira-1 { --n: 1; background: var(--vermelho); }
-.tira-2 { --n: 2; background: var(--azul); }
-.tira-3 { --n: 3; background: var(--verde); }
+.tira-1 { --n: 1; background: var(--preto); }
+.tira-2 { --n: 2; background: var(--vermelho); }
+.tira-3 { --n: 3; background: var(--preto); }
 
 /* Faixa de azulejo */
 .azulejo { height: 72px; background: var(--azulejo) center top / 72px 72px repeat-x; }
@@ -197,19 +193,29 @@ section[id] { scroll-margin-top: 84px; }
 /* Lançamentos */
 .musica { padding-block: clamp(3rem, 7vw, 6rem); }
 .titulo-secao { font-size: clamp(3rem, 8vw, 7rem); }
+.musica-nota { margin-top: .75rem; font-weight: 600; }
+.spotify { display: block; width: 100%; height: 352px; margin-top: .75rem; border: 0; background: var(--preto); }
 .musica-topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
-.btn-verde { --fundo-btn: var(--verde); }
-.lista { margin-top: clamp(1.5rem, 3vw, 2.5rem); border-top: 3px solid var(--tinta); }
-.lista li { border-bottom: 1px solid #c6d6e8; }
+.lista { margin-top: clamp(1.5rem, 3vw, 2.5rem); border-top: 3px solid var(--preto); }
+.lista li { border-bottom: 1px solid var(--preto); }
 .faixa {
   display: grid;
   grid-template-columns: 5.5rem minmax(0, 1fr) auto;
   gap: .25rem 1.5rem;
   align-items: center;
   padding: 1.1rem .75rem;
+  width: 100%;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   text-decoration: none;
+  cursor: pointer;
   transition: background-color .15s ease, color .15s ease;
 }
+.previa { padding-bottom: 1.1rem; }
+.previa iframe { display: block; width: 100%; max-width: 860px; aspect-ratio: 16 / 9; border: 0; background: var(--preto); }
 .faixa-quando { font-weight: 700; font-variant-numeric: tabular-nums; }
 .faixa-corpo { display: grid; gap: .2rem; min-width: 0; }
 .faixa-nome {
@@ -217,28 +223,31 @@ section[id] { scroll-margin-top: 84px; }
   color: var(--cor);
   transition: color .15s ease, transform .2s ease;
 }
-.faixa-quem { color: var(--tinta-suave); line-height: 1.35; transition: color .15s ease; }
+.faixa-quem { color: var(--preto); line-height: 1.35; transition: color .15s ease; }
 .faixa-onde { font-weight: 700; text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 2px; }
 .faixa:hover, .faixa:focus-visible { background: var(--cor); color: var(--branco); }
 .faixa:hover .faixa-nome, .faixa:focus-visible .faixa-nome { color: var(--branco); transform: translateX(10px); }
 .faixa:hover .faixa-quem, .faixa:focus-visible .faixa-quem { color: var(--branco); }
 
 /* Clipe */
-.clipe { background: var(--azul); color: var(--branco); padding-block: clamp(3rem, 7vw, 6rem); }
+.clipe { background: var(--preto); color: var(--branco); padding-block: clamp(3rem, 7vw, 6rem); }
 .clipe-grade {
   display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
 .clipe-texto { display: grid; gap: 1.5rem; justify-items: start; min-width: 0; }
 .clipe-texto > p { font-weight: 600; font-size: 1.15rem; }
-.clipe h2 { font-size: clamp(3.4rem, 9.4vw, 8.5rem); }
+.clipe h2 { font-size: clamp(3.4rem, 7.4vw, 7rem); }
 .creditos { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .35rem 1.25rem; }
 .creditos dt { font-weight: 400; }
 .creditos dd { font-weight: 700; min-width: 0; }
-.poster { display: block; position: relative; text-decoration: none; }
-.poster img { clip-path: polygon(0 0, 100% 0, 83.4% 100%, 0 100%); aspect-ratio: 1 / 1; object-fit: cover; }
+.video { aspect-ratio: 16 / 9; background: var(--preto); min-width: 0; }
+.video iframe { display: block; width: 100%; height: 100%; border: 0; }
+.poster { display: block; position: relative; width: 100%; height: 100%; padding: 0; border: 0; background: none; color: var(--branco); font: inherit; cursor: pointer; }
+.poster img { width: 100%; height: 100%; object-fit: cover; }
+.poster-rotulo { position: absolute; right: 4%; bottom: 8%; padding: .35rem .7rem; background: var(--preto); font-weight: 800; }
 .play {
   position: absolute;
   left: 8%;
@@ -274,10 +283,10 @@ section[id] { scroll-margin-top: 84px; }
 .sobre-foto { margin-left: calc(-1 * max(var(--calha), env(safe-area-inset-left, 0px))); }
 .sobre-foto img { clip-path: polygon(0 0, 100% 0, 85.9% 100%, 0 100%); }
 .sobre-texto { display: grid; gap: 1.1rem; min-width: 0; }
-.sobre-texto h2 { color: var(--verde); }
+.sobre-texto h2 { color: var(--vermelho); }
 .sobre-texto p { max-width: 58ch; }
 .sobre-texto .abre { font-size: 1.3rem; line-height: 1.4; font-weight: 600; }
-.junto { padding-top: .75rem; border-top: 3px solid var(--tinta); }
+.junto { padding-top: .75rem; border-top: 3px solid var(--preto); }
 .junto dt { font-weight: 800; }
 
 /* Contratar */
@@ -292,7 +301,7 @@ section[id] { scroll-margin-top: 84px; }
 .contatos { display: grid; gap: 1rem; min-width: 0; }
 .contatos p { max-width: 40ch; }
 .contatos .btn { justify-self: start; font-size: 1.2rem; padding: 1rem 1.6rem; }
-.contatos .btn:hover { background: var(--tinta); color: var(--branco); }
+.contatos .btn:hover { background: var(--preto); color: var(--branco); }
 .contratar :focus-visible { outline-color: var(--branco); }
 
 /* Rodapé */
@@ -307,7 +316,7 @@ section[id] { scroll-margin-top: 84px; }
   .hero-texto { order: 2; padding-block: 1.5rem 2.25rem; }
   .hero-texto p:not(.lema) { max-width: 36ch; }
   .clipe-grade, .sobre-grade, .contratar-grade { grid-template-columns: minmax(0, 1fr); }
-  .poster { order: -1; }
+  .video { order: -1; }
   .sobre-foto { margin-right: calc(-1 * max(var(--calha), env(safe-area-inset-right, 0px))); margin-left: calc(-1 * max(var(--calha), env(safe-area-inset-left, 0px))); }
   .sobre-foto img { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
@@ -347,7 +356,7 @@ section[id] { scroll-margin-top: 84px; }
           <p>Artista de funk de São Luís, no Maranhão. Nova era. Bem-vindo ao corre.</p>
           <div class="acoes">
             <a class="btn" href="#musica"><span>Ouvir as músicas</span></a>
-            <a class="btn btn-azul" href="#contratar"><span>Contratar show</span></a>
+            <a class="btn btn-preto" href="#contratar"><span>Contratar show</span></a>
           </div>
         </div>
         <figure class="hero-foto">
@@ -366,8 +375,10 @@ section[id] { scroll-margin-top: 84px; }
     <div class="miolo">
       <div class="musica-topo">
         <h2 class="titulo-secao display">Lançamentos</h2>
-        <a class="btn btn-verde" href="https://open.spotify.com/artist/30urIMg2DVJGd67HSO3fBq"><span>Ouvir no Spotify</span></a>
+        <a class="btn btn-preto" href="https://open.spotify.com/artist/30urIMg2DVJGd67HSO3fBq"><span>Abrir no Spotify</span></a>
       </div>
+      <p class="musica-nota">Aperte o play para ouvir aqui no site.</p>
+      <iframe class="spotify" src="https://open.spotify.com/embed/artist/30urIMg2DVJGd67HSO3fBq?theme=0" title="Músicas do MC Perneta no Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
       <ul class="lista">
         <li>
           <a class="faixa" style="--cor:var(--vermelho)" href="https://music.apple.com/us/album/brota-no-anj%C3%A3o-brota-na-treta-single/6803972942">
@@ -380,7 +391,7 @@ section[id] { scroll-margin-top: 84px; }
           </a>
         </li>
         <li>
-          <a class="faixa" style="--cor:var(--azul)" href="https://music.apple.com/us/album/no-porte-da-glock-single/1895649370">
+          <a class="faixa" style="--cor:var(--preto)" href="https://music.apple.com/us/album/no-porte-da-glock-single/1895649370">
             <span class="faixa-quando">2026</span>
             <span class="faixa-corpo">
               <span class="faixa-nome display">No Porte da Glock</span>
@@ -390,7 +401,7 @@ section[id] { scroll-margin-top: 84px; }
           </a>
         </li>
         <li>
-          <a class="faixa" style="--cor:var(--verde)" href="https://music.apple.com/us/album/tropa-do-garimpo-single/1769873138">
+          <a class="faixa" style="--cor:var(--vermelho)" href="https://music.apple.com/us/album/tropa-do-garimpo-single/1769873138">
             <span class="faixa-quando">2024</span>
             <span class="faixa-corpo">
               <span class="faixa-nome display">Tropa do Garimpo</span>
@@ -399,7 +410,7 @@ section[id] { scroll-margin-top: 84px; }
           </a>
         </li>
         <li>
-          <a class="faixa" style="--cor:var(--vermelho)" href="https://www.instagram.com/mc_perneta_23/">
+          <a class="faixa" style="--cor:var(--preto)" href="https://www.instagram.com/mc_perneta_23/">
             <span class="faixa-quando">Reels</span>
             <span class="faixa-corpo">
               <span class="faixa-nome display">O Perneta Convocou</span>
@@ -409,7 +420,7 @@ section[id] { scroll-margin-top: 84px; }
           </a>
         </li>
         <li>
-          <a class="faixa" style="--cor:var(--azul)" href="https://www.instagram.com/mc_perneta_23/">
+          <a class="faixa" style="--cor:var(--vermelho)" href="https://www.instagram.com/mc_perneta_23/">
             <span class="faixa-quando">Reels</span>
             <span class="faixa-corpo">
               <span class="faixa-nome display">Então Joga</span>
@@ -419,13 +430,14 @@ section[id] { scroll-margin-top: 84px; }
           </a>
         </li>
         <li>
-          <a class="faixa" style="--cor:var(--verde)" href="https://www.youtube.com/watch?v=vYYopKuOWzI">
+          <button class="faixa" type="button" style="--cor:var(--preto)" data-video="vYYopKuOWzI" data-titulo="Mc Perneta, Marabreak Cipher" aria-expanded="false" aria-controls="previa-marabreak">
             <span class="faixa-quando">Vídeo</span>
             <span class="faixa-corpo">
               <span class="faixa-nome display">Marabreak Cipher</span>
             </span>
-            <span class="faixa-onde">Ver no YouTube</span>
-          </a>
+            <span class="faixa-onde" data-rotulo>Ver aqui no site</span>
+          </button>
+          <div class="previa" id="previa-marabreak" hidden></div>
         </li>
       </ul>
     </div>
@@ -434,7 +446,7 @@ section[id] { scroll-margin-top: 84px; }
   <section class="clipe calha" id="clipe">
     <div class="miolo clipe-grade">
       <div class="clipe-texto">
-        <p>Clipe no YouTube</p>
+        <p>Clipe</p>
         <h2 class="display">No Porte da Glock</h2>
         <dl class="creditos">
           <dt>Letra</dt><dd>Mc Perneta</dd>
@@ -444,10 +456,13 @@ section[id] { scroll-margin-top: 84px; }
         </dl>
         <a class="btn btn-branco" href="https://youtu.be/daF3wAxQ9ak"><span>Assistir no YouTube</span></a>
       </div>
-      <a class="poster" href="https://youtu.be/daF3wAxQ9ak" aria-label="Assistir ao clipe de No Porte da Glock no YouTube">
-        <img src="assets/clipe.webp" width="840" height="791" alt="MC Perneta de óculos espelhados e correntes douradas, de perfil, em um passeio de barco" loading="lazy">
-        <span class="play" aria-hidden="true"></span>
-      </a>
+      <div class="video" id="video-clipe">
+        <button class="poster" type="button" data-video="daF3wAxQ9ak" data-titulo="Clipe de No Porte da Glock" aria-label="Ver o clipe de No Porte da Glock aqui no site">
+          <img src="assets/clipe.webp" width="1280" height="720" alt="" loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+          <span class="poster-rotulo">Ver aqui no site</span>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -509,6 +524,39 @@ section[id] { scroll-margin-top: 84px; }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustar);
   if (window.ResizeObserver) new ResizeObserver(ajustar).observe(caixa);
   else window.addEventListener('resize', ajustar);
+})();
+</script>
+<script>
+// Os vídeos só carregam quando a pessoa pede.
+(function () {
+  function player(id, titulo) {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    f.title = titulo;
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    return f;
+  }
+  document.querySelectorAll('[data-video]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var alvoId = b.getAttribute('aria-controls');
+      if (!alvoId) {
+        var f = player(b.dataset.video, b.dataset.titulo);
+        b.parentNode.replaceChild(f, b);
+        f.focus();
+        return;
+      }
+      var alvo = document.getElementById(alvoId);
+      var rotulo = b.querySelector('[data-rotulo]');
+      var abrir = b.getAttribute('aria-expanded') !== 'true';
+      b.setAttribute('aria-expanded', String(abrir));
+      alvo.hidden = !abrir;
+      alvo.textContent = '';
+      if (abrir) alvo.appendChild(player(b.dataset.video, b.dataset.titulo));
+      rotulo.textContent = abrir ? 'Fechar vídeo' : 'Ver aqui no site';
+    });
+  });
 })();
 </script>
 </body>
