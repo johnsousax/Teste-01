@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MC Perneta</title>
+<meta name="description" content="MC Perneta, artista de funk de São Luís, Maranhão. Lançamentos, clipe e contato para shows e parcerias.">
+<meta property="og:title" content="MC Perneta">
+<meta property="og:description" content="MC Perneta, artista de funk de São Luís, Maranhão. Lançamentos, clipe e contato para shows e parcerias.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mcperneta.vercel.app/og.jpg">
+<meta property="og:url" content="https://mcperneta.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+<style>
+/* Conceito: tudo corre no ângulo do itálico (10°), como a moto e o quadriciclo das fotos.
+   Paleta tirada da foto das dunas: quadriciclo vermelho, lagoa azul, areia branca, mato verde.
+   Um único detalhe local: a faixa de azulejo de São Luís. */
+:root {
+  color-scheme: light;
+  --branco: #ffffff;
+  --areia: #eef5fc;
+  --tinta: #0c2444;
+  --tinta-suave: #41577a;
+  --vermelho: #d9142b;
+  --azul: #0a5bd3;
+  --verde: #0a7d41;
+  --fonte: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --calha: clamp(16px, 4vw, 56px);
+  --corte: polygon(11.7% 0, 100% 0, 100% 100%, 0 100%);
+  --azulejo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Crect width='72' height='72' fill='%23fff'/%3E%3Cpath d='M0 0h22a22 22 0 0 1-22 22zM72 0v22a22 22 0 0 1-22-22zM72 72H50a22 22 0 0 1 22-22zM0 72V50a22 22 0 0 1 22 22z' fill='%230a5bd3'/%3E%3Cpath d='M36 12l24 24-24 24-24-24z' fill='none' stroke='%230a5bd3' stroke-width='3'/%3E%3Cpath d='M36 23l13 13-13 13-13-13z' fill='%23d9142b'/%3E%3Ccircle cx='36' cy='36' r='4' fill='%23fff'/%3E%3Ccircle cx='36' cy='5' r='3.5' fill='%230a7d41'/%3E%3Ccircle cx='36' cy='67' r='3.5' fill='%230a7d41'/%3E%3Ccircle cx='5' cy='36' r='3.5' fill='%230a7d41'/%3E%3Ccircle cx='67' cy='36' r='3.5' fill='%230a7d41'/%3E%3C/svg%3E");
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--branco);
+  color: var(--tinta);
+  font: 400 1.0625rem/1.6 var(--fonte);
+  overflow-x: clip;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--branco);
+}
+img { display: block; width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, p, ul, dl, dd, figure { margin: 0; padding: 0; }
+ul { list-style: none; }
+:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+section[id] { scroll-margin-top: 84px; }
+
+.calha {
+  padding-left: max(var(--calha), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--calha), env(safe-area-inset-right, 0px));
+}
+.miolo { max-width: 1480px; margin-inline: auto; }
+
+.display {
+  font-family: var(--fonte);
+  font-stretch: 62%;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.02;
+  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+/* Botões inclinados no ângulo do itálico */
+.btn {
+  display: inline-block;
+  padding: .85rem 1.5rem;
+  background: var(--fundo-btn, var(--vermelho));
+  color: var(--cor-btn, var(--branco));
+  font-weight: 800;
+  font-stretch: 88%;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  text-decoration: none;
+  transform: skewX(-10deg);
+  transition: transform .18s ease, background-color .18s ease, color .18s ease;
+}
+.btn > span { display: inline-block; transform: skewX(10deg); }
+.btn:hover { transform: skewX(-10deg) translateX(6px); }
+.btn-azul { --fundo-btn: var(--azul); }
+.btn-branco { --fundo-btn: var(--branco); --cor-btn: var(--tinta); }
+
+/* Topo */
+.topo {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 9;
+  background: var(--branco);
+}
+.topo-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 68px;
+}
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  text-decoration: none;
+  font-stretch: 62%;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+.marca i { display: inline-flex; gap: 3px; transform: skewX(-10deg); }
+.marca i b { display: block; width: 5px; height: 20px; }
+.marca i b:nth-child(1) { background: var(--vermelho); }
+.marca i b:nth-child(2) { background: var(--azul); }
+.marca i b:nth-child(3) { background: var(--verde); }
+.topo nav { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2rem); }
+.topo nav a:not(.btn) {
+  font-weight: 600;
+  text-decoration: none;
+  padding-block: .4rem;
+  border-bottom: 2px solid transparent;
+}
+.topo nav a:not(.btn):hover { border-bottom-color: var(--vermelho); }
+.topo .btn { padding: .55rem 1.05rem; font-size: .98rem; white-space: nowrap; }
+
+/* Abertura */
+.hero { padding-top: clamp(.5rem, 1.6vw, 1.5rem); }
+.hero-miolo { max-width: 1720px; margin-inline: auto; }
+.palavra {
+  position: relative;
+  z-index: 2;
+  font-size: 20vw;
+  line-height: .84;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  overflow-wrap: normal;
+}
+.palavra-in { display: inline-block; padding-right: .06em; }
+.palavra span span { display: inline-block; animation: entra .7s cubic-bezier(.16, 1, .3, 1) backwards; }
+.palavra .mc { color: var(--azul); }
+.palavra .nome { color: var(--vermelho); animation-delay: .08s; }
+@keyframes entra {
+  from { transform: translateX(-9vw) skewX(-10deg); }
+  to { transform: none; }
+}
+.hero-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+  margin-top: clamp(-3rem, -2.4vw, -.5rem);
+}
+.hero-texto {
+  display: grid;
+  gap: 1rem;
+  padding-block: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 3vw, 2.75rem);
+  min-width: 0;
+}
+.lema { font-size: clamp(2.6rem, 5.6vw, 5.5rem); }
+.hero-texto p:not(.lema) { max-width: 30ch; color: var(--tinta-suave); font-size: 1.15rem; line-height: 1.45; }
+.acoes { display: flex; flex-wrap: wrap; gap: .75rem 1rem; padding-top: .5rem; }
+.hero-foto {
+  position: relative;
+  margin-right: calc(-1 * max(var(--calha), env(safe-area-inset-right, 0px)));
+  min-width: 0;
+  aspect-ratio: 3 / 2;
+  max-width: calc(100% + var(--calha));
+}
+.hero-foto img, .hero-foto .tira {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: var(--corte);
+}
+.hero-foto .tira { transform: translateX(calc(var(--n) * -14px)); }
+.tira-1 { --n: 1; background: var(--vermelho); }
+.tira-2 { --n: 2; background: var(--azul); }
+.tira-3 { --n: 3; background: var(--verde); }
+
+/* Faixa de azulejo */
+.azulejo { height: 72px; background: var(--azulejo) center top / 72px 72px repeat-x; }
+
+/* Lançamentos */
+.musica { padding-block: clamp(3rem, 7vw, 6rem); }
+.titulo-secao { font-size: clamp(3rem, 8vw, 7rem); }
+.musica-topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+.btn-verde { --fundo-btn: var(--verde); }
+.lista { margin-top: clamp(1.5rem, 3vw, 2.5rem); border-top: 3px solid var(--tinta); }
+.lista li { border-bottom: 1px solid #c6d6e8; }
+.faixa {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  gap: .25rem 1.5rem;
+  align-items: center;
+  padding: 1.1rem .75rem;
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease;
+}
+.faixa-quando { font-weight: 700; font-variant-numeric: tabular-nums; }
+.faixa-corpo { display: grid; gap: .2rem; min-width: 0; }
+.faixa-nome {
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  color: var(--cor);
+  transition: color .15s ease, transform .2s ease;
+}
+.faixa-quem { color: var(--tinta-suave); line-height: 1.35; transition: color .15s ease; }
+.faixa-onde { font-weight: 700; text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 2px; }
+.faixa:hover, .faixa:focus-visible { background: var(--cor); color: var(--branco); }
+.faixa:hover .faixa-nome, .faixa:focus-visible .faixa-nome { color: var(--branco); transform: translateX(10px); }
+.faixa:hover .faixa-quem, .faixa:focus-visible .faixa-quem { color: var(--branco); }
+
+/* Clipe */
+.clipe { background: var(--azul); color: var(--branco); padding-block: clamp(3rem, 7vw, 6rem); }
+.clipe-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.clipe-texto { display: grid; gap: 1.5rem; justify-items: start; min-width: 0; }
+.clipe-texto > p { font-weight: 600; font-size: 1.15rem; }
+.clipe h2 { font-size: clamp(3.4rem, 9.4vw, 8.5rem); }
+.creditos { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .35rem 1.25rem; }
+.creditos dt { font-weight: 400; }
+.creditos dd { font-weight: 700; min-width: 0; }
+.poster { display: block; position: relative; text-decoration: none; }
+.poster img { clip-path: polygon(0 0, 100% 0, 83.4% 100%, 0 100%); aspect-ratio: 1 / 1; object-fit: cover; }
+.play {
+  position: absolute;
+  left: 8%;
+  bottom: 8%;
+  display: grid;
+  place-items: center;
+  width: clamp(72px, 9vw, 112px);
+  aspect-ratio: 4 / 3;
+  background: var(--vermelho);
+  transform: skewX(-10deg);
+  transition: transform .18s ease;
+}
+.play::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 26px solid var(--branco);
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  transform: skewX(10deg);
+}
+.poster:hover .play { transform: skewX(-10deg) translateX(8px); }
+.clipe :focus-visible { outline-color: var(--branco); }
+
+/* Sobre */
+.sobre { padding-block: clamp(3rem, 7vw, 6rem); overflow: clip; }
+.sobre-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.sobre-foto { margin-left: calc(-1 * max(var(--calha), env(safe-area-inset-left, 0px))); }
+.sobre-foto img { clip-path: polygon(0 0, 100% 0, 85.9% 100%, 0 100%); }
+.sobre-texto { display: grid; gap: 1.1rem; min-width: 0; }
+.sobre-texto h2 { color: var(--verde); }
+.sobre-texto p { max-width: 58ch; }
+.sobre-texto .abre { font-size: 1.3rem; line-height: 1.4; font-weight: 600; }
+.junto { padding-top: .75rem; border-top: 3px solid var(--tinta); }
+.junto dt { font-weight: 800; }
+
+/* Contratar */
+.contratar { background: var(--vermelho); color: var(--branco); padding-block: clamp(3rem, 7vw, 6rem); }
+.contratar-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+}
+.contratar h2 { font-size: clamp(3rem, 7.4vw, 6.75rem); }
+.contatos { display: grid; gap: 1rem; min-width: 0; }
+.contatos p { max-width: 40ch; }
+.contatos .btn { justify-self: start; font-size: 1.2rem; padding: 1rem 1.6rem; }
+.contatos .btn:hover { background: var(--tinta); color: var(--branco); }
+.contratar :focus-visible { outline-color: var(--branco); }
+
+/* Rodapé */
+.rodape { padding-block: 1.75rem calc(1.75rem + env(safe-area-inset-bottom, 0px)); }
+.rodape-linha { display: flex; flex-wrap: wrap; gap: .75rem 2rem; align-items: center; justify-content: space-between; }
+.rodape ul { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+.rodape a { font-weight: 600; text-underline-offset: .2em; }
+
+@media (max-width: 860px) {
+  .hero-grade { grid-template-columns: minmax(0, 1fr); margin-top: -.4rem; gap: 0; }
+  .hero-foto { order: 1; }
+  .hero-texto { order: 2; padding-block: 1.5rem 2.25rem; }
+  .hero-texto p:not(.lema) { max-width: 36ch; }
+  .clipe-grade, .sobre-grade, .contratar-grade { grid-template-columns: minmax(0, 1fr); }
+  .poster { order: -1; }
+  .sobre-foto { margin-right: calc(-1 * max(var(--calha), env(safe-area-inset-right, 0px))); margin-left: calc(-1 * max(var(--calha), env(safe-area-inset-left, 0px))); }
+  .sobre-foto img { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+@media (max-width: 680px) {
+  .topo nav a:not(.btn) { display: none; }
+  .faixa { grid-template-columns: minmax(0, 1fr) auto; padding-inline: .25rem; }
+  .faixa-corpo { grid-column: 1 / -1; grid-row: 2; }
+  .faixa-onde { font-size: .95rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .palavra span span { animation: none; }
+  .btn, .faixa, .faixa-nome, .faixa-quem, .play { transition: none; }
+}
+</style>
+</head>
+<body>
+<header class="topo calha">
+  <div class="miolo topo-linha">
+    <a class="marca" href="#inicio" aria-label="MC Perneta, voltar ao início"><i aria-hidden="true"><b></b><b></b><b></b></i>MC PERNETA</a>
+    <nav aria-label="Principal">
+      <a href="#musica">Música</a>
+      <a href="#clipe">Clipe</a>
+      <a href="#sobre">Sobre</a>
+      <a class="btn" href="#contratar"><span>Contratar show</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero calha">
+    <div class="hero-miolo">
+      <h1 class="palavra display" id="palavra"><span class="palavra-in" id="palavra-in"><span class="mc">MC</span> <span class="nome">Perneta</span></span></h1>
+      <div class="hero-grade">
+        <div class="hero-texto">
+          <p class="lema display">Som, visão e vivência.</p>
+          <p>Artista de funk de São Luís, no Maranhão. Nova era. Bem-vindo ao corre.</p>
+          <div class="acoes">
+            <a class="btn" href="#musica"><span>Ouvir as músicas</span></a>
+            <a class="btn btn-azul" href="#contratar"><span>Contratar show</span></a>
+          </div>
+        </div>
+        <figure class="hero-foto">
+          <div class="tira tira-3" aria-hidden="true"></div>
+          <div class="tira tira-2" aria-hidden="true"></div>
+          <div class="tira tira-1" aria-hidden="true"></div>
+          <img src="assets/hero.webp" width="1260" height="840" alt="MC Perneta de camisa branca e óculos escuros nas dunas dos Lençóis Maranhenses, ao lado de uma placa que indica São Luís, MA">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="azulejo" aria-hidden="true"></div>
+
+  <section class="musica calha" id="musica">
+    <div class="miolo">
+      <div class="musica-topo">
+        <h2 class="titulo-secao display">Lançamentos</h2>
+        <a class="btn btn-verde" href="https://open.spotify.com/artist/30urIMg2DVJGd67HSO3fBq"><span>Ouvir no Spotify</span></a>
+      </div>
+      <ul class="lista">
+        <li>
+          <a class="faixa" style="--cor:var(--vermelho)" href="https://music.apple.com/us/album/brota-no-anj%C3%A3o-brota-na-treta-single/6803972942">
+            <span class="faixa-quando">2026</span>
+            <span class="faixa-corpo">
+              <span class="faixa-nome display">Brota no Anjão, Brota na Treta</span>
+              <span class="faixa-quem">Com Dj LP Do Anjão, pelo selo Ilhaclan Rec. Saiu em 22 de agosto.</span>
+            </span>
+            <span class="faixa-onde">Ouvir na Apple Music</span>
+          </a>
+        </li>
+        <li>
+          <a class="faixa" style="--cor:var(--azul)" href="https://music.apple.com/us/album/no-porte-da-glock-single/1895649370">
+            <span class="faixa-quando">2026</span>
+            <span class="faixa-corpo">
+              <span class="faixa-nome display">No Porte da Glock</span>
+              <span class="faixa-quem">Produção musical de Dj Mateus Detona.</span>
+            </span>
+            <span class="faixa-onde">Ouvir na Apple Music</span>
+          </a>
+        </li>
+        <li>
+          <a class="faixa" style="--cor:var(--verde)" href="https://music.apple.com/us/album/tropa-do-garimpo-single/1769873138">
+            <span class="faixa-quando">2024</span>
+            <span class="faixa-corpo">
+              <span class="faixa-nome display">Tropa do Garimpo</span>
+            </span>
+            <span class="faixa-onde">Ouvir na Apple Music</span>
+          </a>
+        </li>
+        <li>
+          <a class="faixa" style="--cor:var(--vermelho)" href="https://www.instagram.com/mc_perneta_23/">
+            <span class="faixa-quando">Reels</span>
+            <span class="faixa-corpo">
+              <span class="faixa-nome display">O Perneta Convocou</span>
+              <span class="faixa-quem">Com Dj Collins.</span>
+            </span>
+            <span class="faixa-onde">Ver no Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a class="faixa" style="--cor:var(--azul)" href="https://www.instagram.com/mc_perneta_23/">
+            <span class="faixa-quando">Reels</span>
+            <span class="faixa-corpo">
+              <span class="faixa-nome display">Então Joga</span>
+              <span class="faixa-quem">Com Dj Collins.</span>
+            </span>
+            <span class="faixa-onde">Ver no Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a class="faixa" style="--cor:var(--verde)" href="https://www.youtube.com/watch?v=vYYopKuOWzI">
+            <span class="faixa-quando">Vídeo</span>
+            <span class="faixa-corpo">
+              <span class="faixa-nome display">Marabreak Cipher</span>
+            </span>
+            <span class="faixa-onde">Ver no YouTube</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="clipe calha" id="clipe">
+    <div class="miolo clipe-grade">
+      <div class="clipe-texto">
+        <p>Clipe no YouTube</p>
+        <h2 class="display">No Porte da Glock</h2>
+        <dl class="creditos">
+          <dt>Letra</dt><dd>Mc Perneta</dd>
+          <dt>Produção</dt><dd>Dj Mateus Detona / MTS Prod</dd>
+          <dt>Imagens e edição</dt><dd>Africankilla</dd>
+          <dt>Publicado em</dt><dd>8 de julho de 2026</dd>
+        </dl>
+        <a class="btn btn-branco" href="https://youtu.be/daF3wAxQ9ak"><span>Assistir no YouTube</span></a>
+      </div>
+      <a class="poster" href="https://youtu.be/daF3wAxQ9ak" aria-label="Assistir ao clipe de No Porte da Glock no YouTube">
+        <img src="assets/clipe.webp" width="840" height="791" alt="MC Perneta de óculos espelhados e correntes douradas, de perfil, em um passeio de barco" loading="lazy">
+        <span class="play" aria-hidden="true"></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="sobre calha" id="sobre">
+    <div class="miolo sobre-grade">
+      <figure class="sobre-foto">
+        <img src="assets/sobre.webp" width="1140" height="914" alt="MC Perneta pilotando uma moto Honda laranja com uma mulher de vestido vermelho na garupa" loading="lazy">
+      </figure>
+      <div class="sobre-texto">
+        <h2 class="titulo-secao display">Sobre</h2>
+        <p class="abre">MC Perneta é artista de funk de São Luís, no Maranhão. Ele resume o trabalho em três palavras: som, visão e vivência.</p>
+        <p>Em 2026 lançou No Porte da Glock, com letra própria e produção de Dj Mateus Detona, e Brota no Anjão, Brota na Treta, com Dj LP Do Anjão. Nos reels, segue com Dj Collins em O Perneta Convocou e Então Joga.</p>
+        <dl class="junto">
+          <dt>Quem está junto</dt>
+          <dd>Dj LP Do Anjão, Dj Mateus Detona, Dj Collins, Ilhaclan Rec e Dafirma</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="contratar calha" id="contratar">
+    <div class="miolo contratar-grade">
+      <h2 class="display">Leve o MC Perneta para o seu evento</h2>
+      <div class="contatos">
+        <p>Shows e parcerias são tratados pelo Instagram. Envie a cidade, a data, o local e o tipo de evento.</p>
+        <a class="btn btn-branco" href="https://www.instagram.com/dafirma.ofc/"><span>Chamar @dafirma.ofc</span></a>
+        <a class="btn btn-branco" href="https://www.instagram.com/di.alcantaraaa/"><span>Chamar @di.alcantaraaa</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="azulejo" aria-hidden="true"></div>
+
+<footer class="rodape calha">
+  <div class="miolo rodape-linha">
+    <p>© 2026 MC Perneta</p>
+    <ul>
+      <li><a href="https://www.instagram.com/mc_perneta_23/">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@mcpernetaoficial3829">YouTube</a></li>
+      <li><a href="https://open.spotify.com/artist/30urIMg2DVJGd67HSO3fBq">Spotify</a></li>
+      <li><a href="https://music.apple.com/us/artist/mc-perneta/1450650850">Apple Music</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+// Faz o nome ocupar exatamente a largura da página, com qualquer fonte que carregar.
+(function () {
+  var caixa = document.getElementById('palavra');
+  var linha = document.getElementById('palavra-in');
+  function ajustar() {
+    var atual = parseFloat(getComputedStyle(caixa).fontSize);
+    var largura = linha.offsetWidth;
+    if (!largura) return;
+    caixa.style.fontSize = (atual * caixa.clientWidth / largura) + 'px';
+  }
+  ajustar();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustar);
+  if (window.ResizeObserver) new ResizeObserver(ajustar).observe(caixa);
+  else window.addEventListener('resize', ajustar);
+})();
+</script>
+</body>
+</html>
